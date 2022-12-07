@@ -1,0 +1,86 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
+| Date         : Wed Dec  7 16:17:08 2022
+| Host         : CSE-P07-2168-49 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file clock_control_sets_placed.rpt
+| Design       : clock
+| Device       : xc7a35t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |     8 |
+|    Minimum number of control sets                        |     8 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    40 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |     8 |
+| >= 0 to < 4        |     2 |
+| >= 4 to < 6        |     4 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     1 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              14 |            3 |
+| No           | No                    | Yes                    |              66 |           28 |
+| No           | Yes                   | No                     |               8 |            3 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |               8 |            3 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-------------------+--------------------+--------------------------------+------------------+----------------+--------------+
+|    Clock Signal   |    Enable Signal   |        Set/Reset Signal        | Slice Load Count | Bel Load Count | Bels / Slice |
++-------------------+--------------------+--------------------------------+------------------+----------------+--------------+
+|  cloc/clk_out     |                    | disp/count_reg[1]_0            |                1 |              2 |         2.00 |
+|  cloc/clk_out     |                    | disp/display[1]                |                1 |              2 |         2.00 |
+|  cloc/clk_out     |                    | out[3]                         |                1 |              4 |         4.00 |
+|  clockie/cloc/CLK | clockie/cntr2/E[0] | clockie/cntr2/SR[0]            |                2 |              4 |         2.00 |
+|  clockie/cloc/CLK | en_IBUF            | clockie/cntr1/count[3]_i_1_n_0 |                1 |              4 |         4.00 |
+|  clockie/cloc/CLK |                    |                                |                1 |              5 |         5.00 |
+|  cloc/clk_out     |                    |                                |                2 |              9 |         4.50 |
+|  clk_IBUF_BUFG    |                    | rst_IBUF                       |               28 |             66 |         2.36 |
++-------------------+--------------------+--------------------------------+------------------+----------------+--------------+
+
+
