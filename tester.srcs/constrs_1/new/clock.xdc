@@ -57,3 +57,6 @@ set_property IOSTANDARD LVCMOS33 [get_ports anode_active[0]]
 
 set_property PACKAGE_PIN V7 [get_ports dp]							
 	set_property IOSTANDARD LVCMOS33 [get_ports dp]
+	
+set_property PACKAGE_PIN J1 [get_ports alarmBuzz]							
+	set_property IOSTANDARD LVCMOS33 [get_ports alarmBuzz]
